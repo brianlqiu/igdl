@@ -2,8 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import time
+import re
+
+def is_photo_link(tag):
+    return tag.name == 'a' and tag.has_attr('href') and tag['href'].find('/m/') != -1
 
 user = 'theweeknd'
+num_posts = 10
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
@@ -19,3 +24,17 @@ for i in range(1,100):
     last_height = new_height
 html_source = driver.page_source
 soup = BeautifulSoup(html_source, 'html.parser')
+links = soup.find_all(is_photo_link)
+hrefs = []
+for link in links:
+    hrefs.append(link.get('href'))
+post_sources = []
+i = 0
+for href in hrefs:
+    if i > num_posts:
+        break
+    driver.get('https://imgtagram.com' + href)
+    post_sources.append(driver.page_source)
+    i = i + 1
+print(post_sources)
+driver.close()
