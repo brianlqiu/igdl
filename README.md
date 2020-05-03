@@ -14,6 +14,7 @@ this does lead to a couple issues:
 - Videos in carousels: Videos in carousel posts are not downloaded correctly; they are instead the thumbnail of the video
 - IP banning: Imgtagram can ban your IP at any time
 - Unpredictability: Imgtagram can change their source code at any time, which will most likely break the scraper
-- Speed: Waiting for Selenium to load every page and then filtering all of the code can take a pretty long time
 
-This is intended for personal use and possibly for others to use as reference. Use at your own risk.
+These issues are certainly significant and would make this script totally unsuitable for a large-scale project. However, this script was intended for my personal use and I found my script had a huge advantage in speed over modules that offered similar functionalities (instaloader, instapy, etc.), which was most important to me. Use at your own discretion.
+
+
