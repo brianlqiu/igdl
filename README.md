@@ -15,3 +15,5 @@ this does lead to a couple issues:
 - IP banning: Imgtagram can ban your IP at any time
 - Unpredictability: Imgtagram can change their source code at any time, which will most likely break the scraper
 - Speed: Waiting for Selenium to load every page and then filtering all of the code can take a pretty long time
+
+This is intended for personal use and possibly for others to use as reference. Use at your own risk.
